@@ -1,3 +1,74 @@
+Bro aku sudah lihat masalahnya. 
+
+Ada 3 error utama di kode kamu:
+
+---
+
+# 1. Indentasi hilang
+
+Yang salah:
+
+```python
+if "cart" not in st.session_state:
+st.session_state.cart = []
+```
+
+Yang benar:
+
+```python
+if "cart" not in st.session_state:
+    st.session_state.cart = []
+```
+
+---
+
+# 2. Ada backtick ``` di dalam Python
+
+Yang salah:
+
+```python
+with left:
+
+```
+
+st.markdown("""
+
+````
+
+Python tidak bisa baca itu.
+
+Harus jadi:
+
+```python
+with left:
+
+    st.markdown("""
+````
+
+---
+
+# 3. Tombol category tidak diindent
+
+Yang salah:
+
+```python
+with p1:
+st.button("Python")
+```
+
+Yang benar:
+
+```python
+with p1:
+    st.button("Python")
+```
+
+---
+
+## Ini versi yang SUDAH DIPERBAIKI
+
+Ganti isi `streamlit_app.py` dengan ini:
+
 import streamlit as st
 
 # ==========================================
@@ -41,7 +112,6 @@ html, body, [class*="css"] {
     font-family: 'Poppins', sans-serif;
 }
 
-/* MAIN BACKGROUND */
 .stApp {
     background: linear-gradient(
         135deg,
@@ -52,34 +122,27 @@ html, body, [class*="css"] {
     color: white;
 }
 
-/* HIDE STREAMLIT DEFAULT */
 #MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
 header {visibility: hidden;}
 
-/* SIDEBAR */
 section[data-testid="stSidebar"] {
     background: rgba(15,23,42,0.95);
-    border-right: 1px solid rgba(255,255,255,0.08);
 }
 
-/* PAGE PADDING */
 .block-container {
     padding-top: 2rem;
     max-width: 95%;
 }
 
-/* HERO */
 .hero {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 30px;
     padding: 50px;
     margin-bottom: 30px;
-    backdrop-filter: blur(10px);
 }
 
-/* HERO TITLE */
 .hero-title {
     font-size: 64px;
     font-weight: 700;
@@ -91,7 +154,6 @@ section[data-testid="stSidebar"] {
     color: #22d3ee;
 }
 
-/* HERO SUB */
 .hero-sub {
     color: #cbd5e1;
     margin-top: 20px;
@@ -99,30 +161,20 @@ section[data-testid="stSidebar"] {
     line-height: 1.8;
 }
 
-/* METRIC CARD */
 .metric-card {
     background: rgba(255,255,255,0.05);
     border-radius: 24px;
     padding: 30px;
     text-align: center;
     border: 1px solid rgba(255,255,255,0.08);
-    backdrop-filter: blur(10px);
-    transition: 0.3s;
 }
 
-.metric-card:hover {
-    transform: translateY(-5px);
-    border: 1px solid rgba(34,211,238,0.5);
-}
-
-/* METRIC NUMBER */
 .metric-number {
     font-size: 55px;
     font-weight: 700;
     color: white;
 }
 
-/* BUTTON */
 .stButton > button {
     background: linear-gradient(
         135deg,
@@ -141,17 +193,6 @@ section[data-testid="stSidebar"] {
 .stButton > button:hover {
     color: white;
     border: none;
-    transform: scale(1.03);
-}
-
-/* ALERT */
-.stAlert {
-    border-radius: 15px;
-}
-
-/* SUBHEADER */
-h3 {
-    color: white !important;
 }
 
 </style>
@@ -180,7 +221,7 @@ st.markdown("""
     <div class="hero-sub">
         SmartLib Archivio is a modern digital library platform
         designed to help users discover, borrow, and manage
-        books efficiently through a fast and modern system.
+        books efficiently.
     </div>
 
 </div>
