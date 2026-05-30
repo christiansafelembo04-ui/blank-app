@@ -377,8 +377,232 @@ books = [
         "category":"Superhero",
         "image":"https://images.unsplash.com/photo-1521587760476-6c12a4b040da"
     }
+ },
+
+    # ==========================================
+    # FOOTBALL
+    # ==========================================
+    {
+        "title":"Messi: The Rise of a Legend",
+        "author":"Football Media",
+        "category":"Football",
+        "image":"https://images.unsplash.com/photo-1518091043644-c1d4457512c6"
+    },
+
+    {
+        "title":"Cristiano Ronaldo: Born to Win",
+        "author":"Football Media",
+        "category":"Football",
+        "image":"https://images.unsplash.com/photo-1522778119026-d647f0596c20"
+    },
+
+    {
+        "title":"Neymar Jr: The Magical Dribbler",
+        "author":"Football Media",
+        "category":"Football",
+        "image":"https://images.unsplash.com/photo-1574629810360-7efbbe195018"
+    },
+
+    {
+        "title":"Kylian Mbappé: Speed of Light",
+        "author":"Football Media",
+        "category":"Football",
+        "image":"https://images.unsplash.com/photo-1508098682722-e99c643e7485"
+    },
+
+    {
+        "title":"Erling Haaland Goal Machine",
+        "author":"Football Media",
+        "category":"Football",
+        "image":"https://images.unsplash.com/photo-1517466787929-bc90951d0974"
+    },
+
+    {
+        "title":"The World Cup Story",
+        "author":"FIFA",
+        "category":"Football",
+        "image":"https://images.unsplash.com/photo-1546519638-68e109498ffc"
+    },
+
+    {
+        "title":"FIFA World Cup Champions",
+        "author":"FIFA",
+        "category":"Football",
+        "image":"https://images.unsplash.com/photo-1522778526097-ce0a22ceb253"
+    },
+
+    {
+        "title":"Football Legends of All Time",
+        "author":"Sports World",
+        "category":"Football",
+        "image":"https://images.unsplash.com/photo-1517649763962-0c623066013b"
+    },
+
+    {
+        "title":"UEFA Champions League Heroes",
+        "author":"UEFA",
+        "category":"Football",
+        "image":"https://images.unsplash.com/photo-1508098682722-e99c643e7485"
+    },
+
+    {
+        "title":"The Greatest Goals Ever Scored",
+        "author":"Football Media",
+        "category":"Football",
+        "image":"https://images.unsplash.com/photo-1553778263-73a83bab9b0c"
+    },
+
+    # ==========================================
+    # ANIME
+    # ==========================================
+    {
+        "title":"Dragon Ball Super",
+        "author":"Akira Toriyama",
+        "category":"Anime",
+        "image":"https://images.unsplash.com/photo-1578632767115-351597cf2477"
+    },
+
+    {
+        "title":"Naruto: The Ninja Journey",
+        "author":"Masashi Kishimoto",
+        "category":"Anime",
+        "image":"https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe"
+    },
+
+    {
+        "title":"One Piece Treasure Hunt",
+        "author":"Eiichiro Oda",
+        "category":"Anime",
+        "image":"https://images.unsplash.com/photo-1608889825103-eb5ed706fc64"
+    },
+
+    {
+        "title":"Attack on Titan",
+        "author":"Hajime Isayama",
+        "category":"Anime",
+        "image":"https://images.unsplash.com/photo-1618336753974-aae8e04506aa"
+    },
+
+    {
+        "title":"Demon Slayer",
+        "author":"Koyoharu Gotouge",
+        "category":"Anime",
+        "image":"https://images.unsplash.com/photo-1607604276583-eef5d076aa5f"
+    },
+
+    # ==========================================
+    # GAMES
+    # ==========================================
+    {
+        "title":"Minecraft Survival Guide",
+        "author":"Mojang",
+        "category":"Gaming",
+        "image":"https://images.unsplash.com/photo-1493711662062-fa541adb3fc8"
+    },
+
+    {
+        "title":"Roblox Adventures",
+        "author":"Roblox Studio",
+        "category":"Gaming",
+        "image":"https://images.unsplash.com/photo-1511512578047-dfb367046420"
+    },
+
+    {
+        "title":"PUBG Battleground Tactics",
+        "author":"PUBG Corporation",
+        "category":"Gaming",
+        "image":"https://images.unsplash.com/photo-1542751110-97427bbecf20"
+    },
+
+    {
+        "title":"Free Fire Elite Squad",
+        "author":"Garena",
+        "category":"Gaming",
+        "image":"https://images.unsplash.com/photo-1542751371-adc38448a05e"
+    },
+
+    {
+        "title":"Mobile Legends Ultimate Heroes",
+        "author":"Moonton",
+        "category":"Gaming",
+        "image":"https://images.unsplash.com/photo-1550745165-9bc0b252726f"
+    },
+
+    # ==========================================
+    # ADVENTURE & NOVEL
+    # ==========================================
+    {
+        "title":"The Jungle Book",
+        "author":"Rudyard Kipling",
+        "category":"Adventure",
+        "image":"https://images.unsplash.com/photo-1512820790803-83ca734da794"
+    },
+
+    {
+        "title":"Percy Jackson and the Lightning Thief",
+        "author":"Rick Riordan",
+        "category":"Adventure",
+        "image":"https://images.unsplash.com/photo-1544947950-fa07a98d237f"
+    },
+
+    {
+        "title":"The Chronicles of Narnia",
+        "author":"C.S. Lewis",
+        "category":"Fantasy",
+        "image":"https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
+    },
+
+    {
+        "title":"Diary of a Wimpy Kid",
+        "author":"Jeff Kinney",
+        "category":"Comedy",
+        "image":"https://images.unsplash.com/photo-1516979187457-637abb4f9353"
+    },
+
+    {
+        "title":"Sherlock Holmes Mystery Collection",
+        "author":"Arthur Conan Doyle",
+        "category":"Mystery",
+        "image":"https://images.unsplash.com/photo-1521587760476-6c12a4b040da"
+    },
+
+    {
+        "title":"The Hunger Games",
+        "author":"Suzanne Collins",
+        "category":"Adventure",
+        "image":"https://images.unsplash.com/photo-1512820790803-83ca734da794"
+    },
+
+    {
+        "title":"Jurassic World Adventure",
+        "author":"Universal Studios",
+        "category":"Adventure",
+        "image":"https://images.unsplash.com/photo-1514329926535-7f6db2f4b2f4"
+    },
+
+    {
+        "title":"Fast and Furious Racing Legends",
+        "author":"Universal Studios",
+        "category":"Action",
+        "image":"https://images.unsplash.com/photo-1492144534655-ae79c964c9d7"
+    },
+
+    {
+        "title":"Transformers: Rise of the Robots",
+        "author":"Hasbro",
+        "category":"Sci-Fi",
+        "image":"https://images.unsplash.com/photo-1503376780353-7e6692767b70"
+    },
+
+    {
+        "title":"Star Wars Galactic Battles",
+        "author":"Lucasfilm",
+        "category":"Sci-Fi",
+        "image":"https://images.unsplash.com/photo-1446776811953-b23d57bd21aa"
+    }
 
 ]
+
 
 # ==========================================
 # HERO SECTION
