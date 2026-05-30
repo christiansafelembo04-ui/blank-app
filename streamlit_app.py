@@ -240,4 +240,4 @@ st.markdown("<br>", unsafe_allow_html=True)
 st.info(
     "Use the sidebar to open Explore, My Books, History, and About pages."
 )
-```
+
