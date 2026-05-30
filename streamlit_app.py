@@ -25,7 +25,7 @@ st.markdown("""
 <style>
 
 /* GLOBAL */
-html, body, [class*="css"] {
+html, body {
     font-family: 'Segoe UI', sans-serif;
     color: white;
 }
@@ -297,7 +297,7 @@ html, body, [class*="css"] {
 
 /* IMAGE */
 img {
-    border-radius: 18px;
+    border-radius: 18px !important;
 }
 
 /* SIDEBAR */
@@ -377,15 +377,15 @@ with c1:
         <div class="metric-icon">📚</div>
 
         <div class="metric-title">
-        Borrowed
+            Borrowed
         </div>
 
         <div class="metric-value">
-        {len(st.session_state.cart)}
+            {len(st.session_state.cart)}
         </div>
 
         <div class="metric-sub">
-        Active borrowed books
+            Active borrowed books
         </div>
 
     </div>
@@ -398,15 +398,15 @@ with c2:
         <div class="metric-icon">🛡️</div>
 
         <div class="metric-title">
-        Borrow Limit
+            Borrow Limit
         </div>
 
         <div class="metric-value">
-        3 Books
+            3 Books
         </div>
 
         <div class="metric-sub">
-        Maximum allowed books
+            Maximum allowed books
         </div>
 
     </div>
@@ -419,15 +419,15 @@ with c3:
         <div class="metric-icon">🕒</div>
 
         <div class="metric-title">
-        History
+            History
         </div>
 
         <div class="metric-value">
-        {len(st.session_state.history)}
+            {len(st.session_state.history)}
         </div>
 
         <div class="metric-sub">
-        Borrowing records
+            Borrowing records
         </div>
 
     </div>
@@ -459,17 +459,17 @@ for book in books:
             <div class="book-card">
 
             <div class="book-title">
-            {book["title"]}
+                {book["title"]}
             </div>
 
             <br>
 
             <p class="author">
-            Author: {book["author"]}
+                Author: {book["author"]}
             </p>
 
             <div class="tag">
-            {book["category"]}
+                {book["category"]}
             </div>
 
             </div>
@@ -487,6 +487,9 @@ for book in books:
                         st.session_state.cart.append(book["title"])
 
                         st.success("Book added successfully")
+
+                    else:
+                        st.warning("Book already borrowed")
 
                 else:
                     st.error("Borrow limit reached")
@@ -519,4 +522,4 @@ if not st.session_state.history:
 else:
 
     for item in st.session_state.history:
-        st.write(item)
+        st.write(f"📚 {item}")
