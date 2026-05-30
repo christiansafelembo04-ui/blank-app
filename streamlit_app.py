@@ -245,7 +245,7 @@ for book in books:
 
             if st.button(f"Borrow {book['title']}", key=book["title"]):
 
-                if len(st.session_state.cart") < 3:
+                if len(st.session_state.cart) < 3:
 
                     if book["title"] not in st.session_state.cart:
                         st.session_state.cart.append(book["title"])
