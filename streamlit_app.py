@@ -33,9 +33,12 @@ html, body {
 /* MAIN BACKGROUND */
 .stApp {
     background:
-    radial-gradient(circle at top left, rgba(0,198,255,0.15), transparent 25%),
-    radial-gradient(circle at bottom right, rgba(111,66,255,0.15), transparent 25%),
-    linear-gradient(135deg,#050816,#081327,#0c1f47);
+    linear-gradient(
+        135deg,
+        #071026,
+        #0a1931,
+        #111c44
+    );
 }
 
 /* REMOVE TOP SPACE */
@@ -43,66 +46,69 @@ html, body {
     padding-top: 2rem;
 }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
     background:
     linear-gradient(
-        145deg,
-        rgba(10,20,60,0.96),
-        rgba(15,25,70,0.96)
+        135deg,
+        #0f1b3d,
+        #101f54
     );
 
-    padding: 50px;
-    border-radius: 28px;
+    padding: 40px;
 
-    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 25px;
+
+    border: 1px solid rgba(255,255,255,0.08);
 
     box-shadow:
-        0 0 40px rgba(0,198,255,0.12);
+    0 0 30px rgba(0,198,255,0.12);
 
     margin-bottom: 35px;
 }
 
 /* MAIN TITLE */
 .main-title {
-    font-size: 58px;
-    font-weight: 900;
+    font-size: 52px;
+    font-weight: 800;
     color: white;
 }
 
+/* BLUE TEXT */
 .blue {
     color: #00cfff;
-    text-shadow: 0 0 12px rgba(0,207,255,0.7);
+    text-shadow:
+    0 0 8px rgba(0,207,255,0.35);
 }
 
 /* HERO TITLE */
 .hero-title {
-    font-size: 68px;
+    font-size: 58px;
     font-weight: 900;
-    line-height: 1.1;
     color: white;
     margin-top: 20px;
+    line-height: 1.1;
 }
 
 /* HERO DESC */
 .hero-desc {
+    font-size: 20px;
     color: #dbeafe;
-    font-size: 22px;
-    margin-top: 20px;
+    margin-top: 18px;
 }
 
-/* SEARCH BOX */
+/* SEARCH */
 .stTextInput input {
 
-    background: rgba(15,25,60,0.95) !important;
+    background-color: #0b1736 !important;
 
     color: white !important;
 
-    border-radius: 16px !important;
+    border-radius: 14px !important;
 
     border: 1px solid rgba(0,198,255,0.25) !important;
 
-    padding: 14px !important;
+    padding: 12px !important;
 
     font-size: 16px !important;
 }
@@ -111,88 +117,80 @@ html, body {
 .stButton button {
 
     background:
-    linear-gradient(90deg,#00c6ff,#6f42ff);
+    linear-gradient(
+        90deg,
+        #00c6ff,
+        #6f42ff
+    );
 
     color: white;
 
     border: none;
 
-    border-radius: 14px;
+    border-radius: 12px;
 
-    padding: 10px 22px;
+    padding: 10px 18px;
 
-    font-weight: 700;
+    font-weight: bold;
 
     transition: 0.3s;
 
     box-shadow:
-    0 0 18px rgba(0,198,255,0.25);
+    0 0 15px rgba(0,198,255,0.15);
 }
 
 .stButton button:hover {
 
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 
     box-shadow:
-    0 0 25px rgba(0,198,255,0.5),
-    0 0 40px rgba(111,66,255,0.3);
+    0 0 20px rgba(0,198,255,0.28);
 }
 
 /* METRIC BOX */
 .metric-box {
 
     background:
-    linear-gradient(
-        145deg,
-        rgba(15,25,60,0.96),
-        rgba(10,20,55,0.95)
-    );
+    rgba(20,30,70,0.9);
 
-    padding: 28px;
+    padding: 24px;
 
-    border-radius: 24px;
-
-    border: 1px solid rgba(0,198,255,0.12);
+    border-radius: 20px;
 
     text-align: center;
 
-    transition: 0.35s;
+    border: 1px solid rgba(255,255,255,0.06);
 
-    box-shadow:
-    0 0 25px rgba(0,198,255,0.08);
+    transition: 0.3s;
 }
 
 .metric-box:hover {
 
-    transform: translateY(-6px);
+    transform: translateY(-4px);
 
     box-shadow:
-    0 0 35px rgba(0,198,255,0.22),
-    0 0 55px rgba(111,66,255,0.14);
+    0 0 25px rgba(0,198,255,0.18);
 }
 
 /* METRIC ICON */
 .metric-icon {
 
-    font-size: 42px;
+    font-size: 34px;
 
     margin-bottom: 10px;
 
     filter:
-    drop-shadow(0 0 8px #00cfff)
-    drop-shadow(0 0 16px #6f42ff);
+    drop-shadow(0 0 8px #00cfff);
 }
 
 /* METRIC TITLE */
 .metric-title {
 
-    color: white;
+    color: #dbeafe;
 
-    font-size: 24px;
+    font-size: 22px;
 
     font-weight: 700;
-
-    margin-bottom: 12px;
 }
 
 /* METRIC VALUE */
@@ -200,56 +198,46 @@ html, body {
 
     color: white;
 
-    font-size: 56px;
+    font-size: 52px;
 
     font-weight: 900;
 
-    text-shadow:
-    0 0 15px rgba(0,198,255,0.35);
+    margin-top: 8px;
 }
 
-/* METRIC SUBTEXT */
+/* METRIC SUB */
 .metric-sub {
 
     color: #93c5fd;
 
-    margin-top: 10px;
+    font-size: 13px;
 
-    font-size: 14px;
+    margin-top: 6px;
 }
 
 /* BOOK CARD */
 .book-card {
 
     background:
-    linear-gradient(
-        145deg,
-        rgba(10,20,60,0.95),
-        rgba(14,24,64,0.95)
-    );
+    rgba(15,25,60,0.95);
 
-    padding: 24px;
+    padding: 20px;
 
-    border-radius: 24px;
+    border-radius: 20px;
 
     margin-bottom: 20px;
 
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
 
-    transition: 0.35s;
-
-    box-shadow:
-    0 0 20px rgba(0,0,0,0.25);
+    transition: 0.3s;
 }
 
 .book-card:hover {
 
-    transform: translateY(-5px);
-
-    border: 1px solid rgba(0,198,255,0.3);
+    transform: translateY(-4px);
 
     box-shadow:
-    0 0 30px rgba(0,198,255,0.18);
+    0 0 25px rgba(0,198,255,0.20);
 }
 
 /* BOOK TITLE */
@@ -257,7 +245,7 @@ html, body {
 
     color: white;
 
-    font-size: 34px;
+    font-size: 32px;
 
     font-weight: 800;
 }
@@ -267,7 +255,7 @@ html, body {
 
     color: #dbeafe;
 
-    font-size: 18px;
+    font-size: 17px;
 }
 
 /* CATEGORY TAG */
@@ -275,24 +263,18 @@ html, body {
 
     display: inline-block;
 
-    padding: 7px 16px;
+    padding: 6px 14px;
 
     border-radius: 999px;
 
     background:
-    linear-gradient(
-        90deg,
-        rgba(111,66,255,0.25),
-        rgba(0,198,255,0.2)
-    );
+    rgba(111,66,255,0.25);
 
     color: #dbeafe;
 
-    font-size: 14px;
+    font-size: 13px;
 
     margin-top: 10px;
-
-    border: 1px solid rgba(255,255,255,0.06);
 }
 
 /* IMAGE */
@@ -302,13 +284,7 @@ img {
 
 /* SIDEBAR */
 section[data-testid="stSidebar"] {
-
-    background:
-    linear-gradient(
-        180deg,
-        #050b18,
-        #081225
-    );
+    background: #081225;
 }
 
 </style>
@@ -377,15 +353,15 @@ with c1:
         <div class="metric-icon">📚</div>
 
         <div class="metric-title">
-            Borrowed
+        Borrowed
         </div>
 
         <div class="metric-value">
-            {len(st.session_state.cart)}
+        {len(st.session_state.cart)}
         </div>
 
         <div class="metric-sub">
-            Active borrowed books
+        Active borrowed books
         </div>
 
     </div>
@@ -398,15 +374,15 @@ with c2:
         <div class="metric-icon">🛡️</div>
 
         <div class="metric-title">
-            Borrow Limit
+        Borrow Limit
         </div>
 
         <div class="metric-value">
-            3 Books
+        3 Books
         </div>
 
         <div class="metric-sub">
-            Maximum allowed books
+        Maximum allowed books
         </div>
 
     </div>
@@ -419,15 +395,15 @@ with c3:
         <div class="metric-icon">🕒</div>
 
         <div class="metric-title">
-            History
+        History
         </div>
 
         <div class="metric-value">
-            {len(st.session_state.history)}
+        {len(st.session_state.history)}
         </div>
 
         <div class="metric-sub">
-            Borrowing records
+        Borrowing records
         </div>
 
     </div>
