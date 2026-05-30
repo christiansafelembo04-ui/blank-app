@@ -371,13 +371,12 @@ books = [
         "image":"https://images.unsplash.com/photo-1512820790803-83ca734da794"
     },
 
-    {
-        "title":"Black Panther",
-        "author":"Marvel Studios",
-        "category":"Superhero",
-        "image":"https://images.unsplash.com/photo-1521587760476-6c12a4b040da"
-    }
- },
+  {
+    "title":"Black Panther",
+    "author":"Marvel Studios",
+    "category":"Superhero",
+    "image":"https://images.unsplash.com/photo-1521587760476-6c12a4b040da"
+},
 
     # ==========================================
     # FOOTBALL
