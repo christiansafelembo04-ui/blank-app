@@ -237,7 +237,20 @@ with p5:
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-st.info(
-    "Use the sidebar to open Explore, My Books, History, and About pages."
-)
+st.sidebar.title("📚 Navigation")
 
+st.sidebar.success("Select a page below.")
+
+st.markdown("""
+<div style="
+    background: rgba(255,255,255,0.05);
+    padding: 18px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #cbd5e1;
+    margin-top: 20px;
+">
+    📌 Use the sidebar navigation to explore pages like
+    <b>Explore</b>, <b>My Books</b>, <b>History</b>, and <b>About</b>.
+</div>
+""", unsafe_allow_html=True)
