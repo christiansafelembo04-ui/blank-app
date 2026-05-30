@@ -1,19 +1,65 @@
+ import streamlit as st
+
+    st.set_page_config(page_title="SmartLib Archivio", page_icon="📚", layout="wide")
+
+    if "cart" not in st.session_state:
+        st.session_state.cart = []
+    if "history" not in st.session_state:
+        st.session_state.history = []
+
+    st.title("📚 SmartLib Archivio")
+    st.subheader("Find Your Favorite Book Instantly")
+
+    st.markdown("""
+    ### Welcome
+    SmartLib Archivio is a modern digital library platform.
+    Use the sidebar pages to explore books, manage borrowed books,
+    view history, and learn more about the project.
+    """)
+
+    c1,c2,c3 = st.columns(3)
+    c1.metric("Books Borrowed", len(st.session_state.cart))
+    c2.metric("Borrow Limit", "3 Books")
+    c3.metric("History Records", len(st.session_state.history))
+
+    st.info("Open the pages in the sidebar: Explore, My Books, History, and About.")
 import streamlit as st
+books = [
+    {"title":"Python Dasar","author":"Archivio Team","category":"Programming"},
+    {"title":"Python Advanced","author":"Tech Academy","category":"Programming"},
+    {"title":"AI Modern","author":"Tech Publisher","category":"Artificial Intelligence"},
+    {"title":"Machine Learning Essentials","author":"AI Institute","category":"Artificial Intelligence"},
+    {"title":"Data Science 101","author":"Smart Academy","category":"Data Science"},
+    {"title":"Deep Learning Guide","author":"AI Institute","category":"Data Science"},
+    {"title":"Web Development","author":"Code School","category":"Web Development"},
+    {"title":"HTML & CSS Mastery","author":"Frontend Academy","category":"Web Development"},
+    {"title":"Cyber Security Fundamentals","author":"Secure Labs","category":"Cyber Security"},
+    {"title":"Ethical Hacking","author":"Secure Labs","category":"Cyber Security"},
+    {"title":"Database Management","author":"Data Press","category":"Database"},
+    {"title":"Cloud Computing","author":"Cloud Academy","category":"Cloud"},
+]
+if "cart" not in st.session_state:
+    st.session_state.cart = []
 
-# ==========================================
-# PAGE CONFIG
-# ==========================================
+st.title("🔎 Explore Books")
 
-st.set_page_config(
-    page_title="SmartLib Archivio",
-    page_icon="📚",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+search = st.text_input("Search")
 
-# ==========================================
-# SESSION STATE
-# ==========================================
+for book in books:
+    if search.lower() in book["title"].lower():
+        with st.container(border=True):
+            st.subheader(book["title"])
+            st.write(book["author"])
+            st.caption(book["category"])
+
+            if st.button(f"Borrow {book['title']}", key=book["title"]):
+                if len(st.session_state.cart) < 3:
+                    if book["title"] not in st.session_state.cart:
+                        st.session_state.cart.append(book["title"])
+                        st.success("Added")
+                else:
+                    st.error("Borrow limit reached")
+                    import streamlit as st
 
 if "cart" not in st.session_state:
     st.session_state.cart = []
@@ -21,239 +67,54 @@ if "cart" not in st.session_state:
 if "history" not in st.session_state:
     st.session_state.history = []
 
-# ==========================================
-# CUSTOM CSS
-# ==========================================
+st.title("📖 My Books")
+
+if not st.session_state.cart:
+    st.info("No books borrowed.")
+else:
+    for book in st.session_state.cart[:]:
+        col1,col2 = st.columns([4,1])
+
+        with col1:
+            st.write(book)
+
+        with col2:
+            if st.button("Return", key=book):
+                st.session_state.cart.remove(book)
+                st.rerun()
+
+    if st.button("Checkout"):
+        st.session_state.history.extend(st.session_state.cart)
+        st.session_state.cart.clear()
+        st.success("Checkout complete")
+        import streamlit as st
+
+if "history" not in st.session_state:
+    st.session_state.history = []
+
+st.title("🕒 History")
+
+if not st.session_state.history:
+    st.info("No borrowing history.")
+else:
+    for item in st.session_state.history:
+        st.write("📚", item)
+        
+import streamlit as st
+
+st.title("ℹ️ About SmartLib Archivio")
 
 st.markdown("""
-<style>
+### SmartLib Archivio
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+SmartLib Archivio is a digital library application designed to help users
+discover, borrow, and manage books efficiently.
 
-html, body, [class*="css"] {
-    font-family: 'Poppins', sans-serif;
-}
+**Established:** June 4, 2020
 
-/* BACKGROUND */
-.stApp {
-    background: linear-gradient(
-        135deg,
-        #020617 0%,
-        #0f172a 40%,
-        #172554 100%
-    );
-    color: white;
-}
+The platform focuses on a clean user experience,
+simple book management, and modern digital access.
+""")
 
-/* HIDE FOOTER ONLY */
-footer {
-    visibility: hidden;
-}
 
-/* SIDEBAR */
-section[data-testid="stSidebar"] {
-    background: rgba(15,23,42,0.95);
-}
-
-/* SIDEBAR TEXT */
-section[data-testid="stSidebar"] * {
-    color: white !important;
-}
-
-/* NAVIGATION */
-[data-testid="stSidebarNav"] {
-    display: block !important;
-}
-
-[data-testid="stSidebarNav"] * {
-    color: white !important;
-    font-size: 16px !important;
-}
-
-/* PAGE */
-.block-container {
-    padding-top: 2rem;
-    max-width: 95%;
-}
-
-/* HERO */
-.hero {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 30px;
-    padding: 50px;
-    margin-bottom: 30px;
-}
-
-/* HERO TITLE */
-.hero-title {
-    font-size: 64px;
-    font-weight: 700;
-    line-height: 1.1;
-    color: white;
-}
-
-.hero-title span {
-    color: #22d3ee;
-}
-
-/* HERO SUB */
-.hero-sub {
-    color: #cbd5e1;
-    margin-top: 20px;
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-/* CARD */
-.metric-card {
-    background: rgba(255,255,255,0.05);
-    border-radius: 24px;
-    padding: 30px;
-    text-align: center;
-    border: 1px solid rgba(255,255,255,0.08);
-}
-
-/* NUMBER */
-.metric-number {
-    font-size: 55px;
-    font-weight: 700;
-    color: white;
-}
-
-/* BUTTON */
-.stButton > button {
-    background: linear-gradient(
-        135deg,
-        #22d3ee,
-        #2563eb
-    );
-
-    color: white;
-    border: none;
-    border-radius: 14px;
-    padding: 12px 20px;
-    font-weight: 600;
-    width: 100%;
-}
-
-.stButton > button:hover {
-    color: white;
-    border: none;
-}
-
-</style>
-""", unsafe_allow_html=True)
-
-# ==========================================
-# HERO SECTION
-# ==========================================
-
-left, right = st.columns([2,1])
-
-with left:
-
-    st.markdown(
-        """
-        <div class="hero">
-
-            <h1 class="hero-title">
-                Find Your Favorite Book
-                <span>Instantly</span>
-            </h1>
-
-            <p class="hero-sub">
-                SmartLib Archivio is a modern digital library platform
-                designed to help users discover, borrow, and manage
-                books efficiently.
-            </p>
-
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
-with right:
-
-    st.image(
-        "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
-        width=320
-    )
-
-# ==========================================
-# STATS
-# ==========================================
-
-c1, c2, c3 = st.columns(3)
-
-with c1:
-
-    st.markdown(f"""
-    <div class="metric-card">
-        <h2>📚 Books Borrowed</h2>
-        <div class="metric-number">
-            {len(st.session_state.cart)}
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-with c2:
-
-    st.markdown("""
-    <div class="metric-card">
-        <h2>📦 Borrow Limit</h2>
-        <div class="metric-number">
-            3
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-with c3:
-
-    st.markdown(f"""
-    <div class="metric-card">
-        <h2>🕒 History Records</h2>
-        <div class="metric-number">
-            {len(st.session_state.history)}
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-# ==========================================
-# SPACE
-# ==========================================
-
-st.markdown("<br>", unsafe_allow_html=True)
-
-# ==========================================
-# POPULAR CATEGORY
-# ==========================================
-
-st.subheader("🔥 Popular Categories")
-
-p1, p2, p3, p4, p5 = st.columns(5)
-
-with p1:
-    st.button("Python")
-
-with p2:
-    st.button("AI")
-
-with p3:
-    st.button("Data Science")
-
-with p4:
-    st.button("Cyber Security")
-
-with p5:
-    st.button("Web Dev")
-
-# ==========================================
-# INFO
-# ==========================================
-
-st.markdown("<br>", unsafe_allow_html=True)
-
-st.info(
-    "Use the sidebar on the left to navigate between pages."
-)
+                    
