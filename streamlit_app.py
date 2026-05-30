@@ -382,11 +382,11 @@ books = [
     # FOOTBALL
     # ==========================================
     {
-        "title":"Messi: The Rise of a Legend",
-        "author":"Football Media",
-        "category":"Football",
-        "image":"https://images.unsplash.com/photo-1574629810360-7efbbe195018"
-
+    "title":"Messi: The Rise of a Legend",
+    "author":"Football Media",
+    "category":"Football",
+    "image":"https://images.unsplash.com/photo-1574629810360-7efbbe195018"
+},
     {
         "title":"Cristiano Ronaldo: Born to Win",
         "author":"Football Media",
