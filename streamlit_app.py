@@ -271,183 +271,153 @@ st.markdown("""
 # ==========================================
 books = [
 
+    # ==========================================
     # HARRY POTTER
+    # ==========================================
     {
         "title":"Harry Potter and the Sorcerer’s Stone",
         "author":"J.K. Rowling",
         "category":"Fantasy",
-        "image":"https://images.unsplash.com/photo-1512820790803-83ca734da794"
+        "image":"https://cdn.pixabay.com/photo/2015/09/05/21/51/reading-925589_1280.jpg"
     },
 
     {
         "title":"Harry Potter and the Chamber of Secrets",
         "author":"J.K. Rowling",
         "category":"Fantasy",
-        "image":"https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
+        "image":"https://cdn.pixabay.com/photo/2016/11/29/12/54/book-1868068_1280.jpg"
     },
 
     {
         "title":"Harry Potter and the Prisoner of Azkaban",
         "author":"J.K. Rowling",
         "category":"Fantasy",
-        "image":"https://images.unsplash.com/photo-1524578271613-d550eacf6090"
+        "image":"https://cdn.pixabay.com/photo/2017/08/07/22/57/books-2606859_1280.jpg"
     },
 
     {
         "title":"Harry Potter and the Goblet of Fire",
         "author":"J.K. Rowling",
         "category":"Fantasy",
-        "image":"https://images.unsplash.com/photo-1516979187457-637abb4f9353"
+        "image":"https://cdn.pixabay.com/photo/2015/05/31/10/55/manuscript-791049_1280.jpg"
     },
 
     {
         "title":"Harry Potter and the Order of the Phoenix",
         "author":"J.K. Rowling",
         "category":"Fantasy",
-        "image":"https://images.unsplash.com/photo-1544947950-fa07a98d237f"
+        "image":"https://cdn.pixabay.com/photo/2014/08/16/18/17/book-419589_1280.jpg"
     },
 
+    # ==========================================
     # MARVEL & DC
+    # ==========================================
     {
         "title":"Avengers: Endgame",
         "author":"Marvel Studios",
         "category":"Superhero",
-        "image":"https://images.unsplash.com/photo-1531259683007-016a7b628fc3"
+        "image":"https://cdn.pixabay.com/photo/2017/01/31/13/14/superhero-2027340_1280.png"
     },
 
     {
         "title":"Avengers: Infinity War",
         "author":"Marvel Studios",
         "category":"Superhero",
-        "image":"https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c"
+        "image":"https://cdn.pixabay.com/photo/2016/03/31/20/11/comic-1294071_1280.png"
     },
 
     {
         "title":"The Amazing Spider-Man",
         "author":"Marvel Comics",
         "category":"Superhero",
-        "image":"https://images.unsplash.com/photo-1635805737707-575885ab0820"
+        "image":"https://cdn.pixabay.com/photo/2017/01/31/13/14/spiderman-2027067_1280.png"
     },
 
     {
         "title":"Batman: The Dark Knight",
         "author":"DC Comics",
         "category":"Superhero",
-        "image":"https://images.unsplash.com/photo-1608889175119-6c7d1d5d4d4a"
+        "image":"https://cdn.pixabay.com/photo/2017/01/31/13/14/batman-2027045_1280.png"
     },
 
     {
         "title":"Superman Returns",
         "author":"DC Comics",
         "category":"Superhero",
-        "image":"https://images.unsplash.com/photo-1626814026160-2237a95fc5a0"
+        "image":"https://cdn.pixabay.com/photo/2017/01/31/13/14/superman-2027043_1280.png"
     },
 
     {
         "title":"Captain America: Civil War",
         "author":"Marvel Studios",
         "category":"Superhero",
-        "image":"https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+        "image":"https://cdn.pixabay.com/photo/2016/11/29/09/32/captain-america-1867285_1280.jpg"
     },
 
     {
         "title":"Iron Man",
         "author":"Marvel Comics",
         "category":"Superhero",
-        "image":"https://images.unsplash.com/photo-1514329926535-7f6db2f4b2f4"
+        "image":"https://cdn.pixabay.com/photo/2017/01/31/13/14/ironman-2027035_1280.png"
     },
 
     {
         "title":"Thor: Ragnarok",
         "author":"Marvel Studios",
         "category":"Superhero",
-        "image":"https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
+        "image":"https://cdn.pixabay.com/photo/2017/01/31/13/14/thor-2027037_1280.png"
     },
 
     {
         "title":"Doctor Strange",
         "author":"Marvel Studios",
         "category":"Superhero",
-        "image":"https://images.unsplash.com/photo-1512820790803-83ca734da794"
+        "image":"https://cdn.pixabay.com/photo/2016/03/31/19/58/fantasy-1293054_1280.png"
     },
 
-  {
-    "title":"Black Panther",
-    "author":"Marvel Studios",
-    "category":"Superhero",
-    "image":"https://images.unsplash.com/photo-1521587760476-6c12a4b040da"
-},
+    {
+        "title":"Black Panther",
+        "author":"Marvel Studios",
+        "category":"Superhero",
+        "image":"https://cdn.pixabay.com/photo/2017/01/31/13/14/panther-2027031_1280.png"
+    },
 
     # ==========================================
     # FOOTBALL
     # ==========================================
     {
-    "title":"Messi: The Rise of a Legend",
-    "author":"Football Media",
-    "category":"Football",
-    "image":"https://cdn.pixabay.com/photo/2017/01/31/13/14/lionel-messi-2027365_1280.png"
-},
+        "title":"Messi: The Rise of a Legend",
+        "author":"Football Media",
+        "category":"Football",
+        "image":"https://cdn.pixabay.com/photo/2017/01/31/13/14/lionel-messi-2027365_1280.png"
+    },
+
     {
         "title":"Cristiano Ronaldo: Born to Win",
         "author":"Football Media",
         "category":"Football",
-        "image":"https://images.unsplash.com/photo-1522778119026-d647f0596c20"
+        "image":"https://cdn.pixabay.com/photo/2016/11/18/17/20/football-1837521_1280.jpg"
     },
 
     {
         "title":"Neymar Jr: The Magical Dribbler",
         "author":"Football Media",
         "category":"Football",
-        "image":"https://images.unsplash.com/photo-1574629810360-7efbbe195018"
+        "image":"https://cdn.pixabay.com/photo/2014/10/14/20/24/football-488714_1280.jpg"
     },
 
     {
         "title":"Kylian Mbappé: Speed of Light",
         "author":"Football Media",
         "category":"Football",
-        "image":"https://images.unsplash.com/photo-1508098682722-e99c643e7485"
+        "image":"https://cdn.pixabay.com/photo/2016/11/29/02/05/audience-1866738_1280.jpg"
     },
 
     {
         "title":"Erling Haaland Goal Machine",
         "author":"Football Media",
         "category":"Football",
-        "image":"https://images.unsplash.com/photo-1517466787929-bc90951d0974"
-    },
-
-    {
-        "title":"The World Cup Story",
-        "author":"FIFA",
-        "category":"Football",
-        "image":"https://images.unsplash.com/photo-1546519638-68e109498ffc"
-    },
-
-    {
-        "title":"FIFA World Cup Champions",
-        "author":"FIFA",
-        "category":"Football",
-        "image":"https://images.unsplash.com/photo-1522778526097-ce0a22ceb253"
-    },
-
-    {
-        "title":"Football Legends of All Time",
-        "author":"Sports World",
-        "category":"Football",
-        "image":"https://images.unsplash.com/photo-1517649763962-0c623066013b"
-    },
-
-    {
-        "title":"UEFA Champions League Heroes",
-        "author":"UEFA",
-        "category":"Football",
-        "image":"https://images.unsplash.com/photo-1508098682722-e99c643e7485"
-    },
-
-    {
-        "title":"The Greatest Goals Ever Scored",
-        "author":"Football Media",
-        "category":"Football",
-        "image":"https://images.unsplash.com/photo-1553778263-73a83bab9b0c"
+        "image":"https://cdn.pixabay.com/photo/2017/08/10/03/47/football-2616743_1280.jpg"
     },
 
     # ==========================================
@@ -457,35 +427,35 @@ books = [
         "title":"Dragon Ball Super",
         "author":"Akira Toriyama",
         "category":"Anime",
-        "image":"https://images.unsplash.com/photo-1578632767115-351597cf2477"
+        "image":"https://cdn.pixabay.com/photo/2017/01/31/13/14/anime-2027001_1280.png"
     },
 
     {
         "title":"Naruto: The Ninja Journey",
         "author":"Masashi Kishimoto",
         "category":"Anime",
-        "image":"https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe"
+        "image":"https://cdn.pixabay.com/photo/2017/01/31/13/14/ninja-2027028_1280.png"
     },
 
     {
         "title":"One Piece Treasure Hunt",
         "author":"Eiichiro Oda",
         "category":"Anime",
-        "image":"https://images.unsplash.com/photo-1608889825103-eb5ed706fc64"
+        "image":"https://cdn.pixabay.com/photo/2017/01/31/13/14/pirate-2027030_1280.png"
     },
 
     {
         "title":"Attack on Titan",
-        "author":"Hajime Isayama",
+        "author":"Anime Studio",
         "category":"Anime",
-        "image":"https://images.unsplash.com/photo-1618336753974-aae8e04506aa"
+        "image":"https://cdn.pixabay.com/photo/2016/11/29/09/08/titan-1867087_1280.jpg"
     },
 
     {
         "title":"Demon Slayer",
-        "author":"Koyoharu Gotouge",
+        "author":"Anime Studio",
         "category":"Anime",
-        "image":"https://images.unsplash.com/photo-1607604276583-eef5d076aa5f"
+        "image":"https://cdn.pixabay.com/photo/2016/03/31/19/50/sword-1292912_1280.png"
     },
 
     # ==========================================
@@ -495,112 +465,38 @@ books = [
         "title":"Minecraft Survival Guide",
         "author":"Mojang",
         "category":"Gaming",
-        "image":"https://images.unsplash.com/photo-1493711662062-fa541adb3fc8"
+        "image":"https://cdn.pixabay.com/photo/2016/11/29/09/32/game-1867271_1280.jpg"
     },
 
     {
         "title":"Roblox Adventures",
         "author":"Roblox Studio",
         "category":"Gaming",
-        "image":"https://images.unsplash.com/photo-1511512578047-dfb367046420"
+        "image":"https://cdn.pixabay.com/photo/2017/01/31/13/14/game-2027039_1280.png"
     },
 
     {
         "title":"PUBG Battleground Tactics",
         "author":"PUBG Corporation",
         "category":"Gaming",
-        "image":"https://images.unsplash.com/photo-1542751110-97427bbecf20"
+        "image":"https://cdn.pixabay.com/photo/2017/08/10/07/32/gaming-2616760_1280.jpg"
     },
 
     {
         "title":"Free Fire Elite Squad",
         "author":"Garena",
         "category":"Gaming",
-        "image":"https://images.unsplash.com/photo-1542751371-adc38448a05e"
+        "image":"https://cdn.pixabay.com/photo/2016/11/29/03/53/game-1866921_1280.jpg"
     },
 
     {
         "title":"Mobile Legends Ultimate Heroes",
         "author":"Moonton",
         "category":"Gaming",
-        "image":"https://images.unsplash.com/photo-1550745165-9bc0b252726f"
-    },
-
-    # ==========================================
-    # ADVENTURE & NOVEL
-    # ==========================================
-    {
-        "title":"The Jungle Book",
-        "author":"Rudyard Kipling",
-        "category":"Adventure",
-        "image":"https://images.unsplash.com/photo-1512820790803-83ca734da794"
-    },
-
-    {
-        "title":"Percy Jackson and the Lightning Thief",
-        "author":"Rick Riordan",
-        "category":"Adventure",
-        "image":"https://images.unsplash.com/photo-1544947950-fa07a98d237f"
-    },
-
-    {
-        "title":"The Chronicles of Narnia",
-        "author":"C.S. Lewis",
-        "category":"Fantasy",
-        "image":"https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
-    },
-
-    {
-        "title":"Diary of a Wimpy Kid",
-        "author":"Jeff Kinney",
-        "category":"Comedy",
-        "image":"https://images.unsplash.com/photo-1516979187457-637abb4f9353"
-    },
-
-    {
-        "title":"Sherlock Holmes Mystery Collection",
-        "author":"Arthur Conan Doyle",
-        "category":"Mystery",
-        "image":"https://images.unsplash.com/photo-1521587760476-6c12a4b040da"
-    },
-
-    {
-        "title":"The Hunger Games",
-        "author":"Suzanne Collins",
-        "category":"Adventure",
-        "image":"https://images.unsplash.com/photo-1512820790803-83ca734da794"
-    },
-
-    {
-        "title":"Jurassic World Adventure",
-        "author":"Universal Studios",
-        "category":"Adventure",
-        "image":"https://images.unsplash.com/photo-1514329926535-7f6db2f4b2f4"
-    },
-
-    {
-        "title":"Fast and Furious Racing Legends",
-        "author":"Universal Studios",
-        "category":"Action",
-        "image":"https://images.unsplash.com/photo-1492144534655-ae79c964c9d7"
-    },
-
-    {
-        "title":"Transformers: Rise of the Robots",
-        "author":"Hasbro",
-        "category":"Sci-Fi",
-        "image":"https://images.unsplash.com/photo-1503376780353-7e6692767b70"
-    },
-
-    {
-        "title":"Star Wars Galactic Battles",
-        "author":"Lucasfilm",
-        "category":"Sci-Fi",
-        "image":"https://images.unsplash.com/photo-1446776811953-b23d57bd21aa"
+        "image":"https://cdn.pixabay.com/photo/2016/11/21/15/46/mobile-phone-1846277_1280.jpg"
     }
 
 ]
-
 
 # ==========================================
 # HERO SECTION
