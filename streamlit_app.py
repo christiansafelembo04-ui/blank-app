@@ -22,7 +22,7 @@ html, body, [class*="css"] {
     color: white;
 }
 
-/* MAIN BACKGROUND */
+/* BACKGROUND */
 .stApp {
     background:
     radial-gradient(circle at top left, #0b2c5f 0%, transparent 35%),
@@ -129,7 +129,7 @@ footer {
     margin-top:8px;
 }
 
-/* METRICS */
+/* METRIC */
 .metric-box {
     background: rgba(8,20,70,0.88);
     padding: 45px 20px;
@@ -237,7 +237,7 @@ footer {
 """, unsafe_allow_html=True)
 
 # ==========================================
-# SESSION
+# SESSION STATE
 # ==========================================
 if "cart" not in st.session_state:
     st.session_state.cart = []
@@ -270,30 +270,35 @@ st.markdown("""
 # BOOK DATA
 # ==========================================
 books = [
+
     {
         "title":"Python Dasar",
         "author":"Archivio Team",
         "category":"Programming",
         "image":"https://images.unsplash.com/photo-1515879218367-8466d910aaa4"
     },
+
     {
         "title":"AI Modern",
         "author":"Tech Publisher",
         "category":"Artificial Intelligence",
         "image":"https://images.unsplash.com/photo-1677442136019-21780ecad995"
     },
+
     {
         "title":"Data Science 101",
         "author":"Smart Academy",
         "category":"Data Science",
         "image":"https://images.unsplash.com/photo-1551288049-bebda4e38f71"
     },
+
     {
         "title":"Cyber Security",
         "author":"Secure Labs",
         "category":"Cyber Security",
         "image":"https://images.unsplash.com/photo-1510511459019-5dda7724fd87"
     }
+
 ]
 
 # ==========================================
@@ -375,77 +380,98 @@ search = st.text_input(
 st.write("")
 
 # ==========================================
-# BOOK DISPLAY
+# SEARCH LOGIC
 # ==========================================
-for book in books:
+found = False
 
-    if search.lower() in book["title"].lower():
+# ==========================================
+# ONLY SEARCH WHEN USER TYPES
+# ==========================================
+if search.strip() != "":
 
-        col1, col2 = st.columns([1, 2])
+    for book in books:
 
-        with col1:
-            st.image(
-                book["image"],
-                use_container_width=True
-            )
+        # FLEXIBLE SEARCH
+        if search.lower().strip() in book["title"].lower():
 
-        with col2:
+            found = True
 
-            st.markdown(f"""
-            <div class="book-card">
+            col1, col2 = st.columns([1, 2])
 
-            <h1>{book["title"]}</h1>
+            with col1:
+                st.image(
+                    book["image"],
+                    use_container_width=True
+                )
 
-            <p style="font-size:18px;color:#cbd5e1;">
-            Author: {book["author"]}
-            </p>
+            with col2:
 
-            <div class="tag">
-            {book["category"]}
-            </div>
+                st.markdown(f"""
+                <div class="book-card">
 
-            </div>
-            """, unsafe_allow_html=True)
+                <h1>{book["title"]}</h1>
 
-            # ==========================================
-            # BORROW BUTTON
-            # ==========================================
-            if st.button(
-                f"Borrow {book['title']}",
-                key=book["title"]
-            ):
+                <p style="font-size:18px;color:#cbd5e1;">
+                Author: {book["author"]}
+                </p>
 
-                if len(st.session_state.cart) < 3:
+                <div class="tag">
+                {book["category"]}
+                </div>
 
-                    if book["title"] not in st.session_state.cart:
+                </div>
+                """, unsafe_allow_html=True)
 
-                        # ADD TO CART
-                        st.session_state.cart.append(
-                            book["title"]
-                        )
+                # ==========================================
+                # BORROW BUTTON
+                # ==========================================
+                if st.button(
+                    f"Borrow {book['title']}",
+                    key=book["title"]
+                ):
 
-                        # ADD HISTORY
-                        st.session_state.history.append(
-                            f"📖 Borrowed: {book['title']}"
-                        )
+                    # CHECK LIMIT
+                    if len(st.session_state.cart) < 3:
 
-                        # SUCCESS
-                        st.success(
-                            "Book added successfully"
-                        )
+                        # CHECK DUPLICATE
+                        if book["title"] not in st.session_state.cart:
 
-                        # INSTANT REFRESH
-                        st.rerun()
+                            # ADD BOOK
+                            st.session_state.cart.append(
+                                book["title"]
+                            )
+
+                            # ADD HISTORY
+                            st.session_state.history.append(
+                                f"📖 Borrowed: {book['title']}"
+                            )
+
+                            # SUCCESS
+                            st.success(
+                                "Book added successfully"
+                            )
+
+                            # REFRESH
+                            st.rerun()
+
+                        else:
+                            st.warning(
+                                "Book already borrowed"
+                            )
 
                     else:
-                        st.warning(
-                            "Book already borrowed"
+                        st.error(
+                            "Borrow limit reached"
                         )
 
-                else:
-                    st.error(
-                        "Borrow limit reached"
-                    )
+    # ==========================================
+    # BOOK NOT FOUND
+    # ==========================================
+    if not found:
+
+        st.error(
+            "❌ Book not found"
+        )
 
 # ==========================================
 # MY BOOKS
