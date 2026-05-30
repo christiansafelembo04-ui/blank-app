@@ -10,37 +10,30 @@ st.set_page_config(
 )
 
 # ==========================================
-# SESSION STATE
-# ==========================================
-if "cart" not in st.session_state:
-    st.session_state.cart = []
-
-# ==========================================
 # CUSTOM CSS
 # ==========================================
 st.markdown("""
 <style>
 
-/* =========================
-GLOBAL
-========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 html, body, [class*="css"] {
-    font-family: 'Segoe UI', sans-serif;
-}
-
-.stApp {
-    background:
-    radial-gradient(circle at top left, rgba(0,198,255,0.15), transparent 25%),
-    radial-gradient(circle at bottom right, rgba(111,66,255,0.15), transparent 25%),
-    linear-gradient(135deg,#020617,#081127,#0c1d48);
-
+    font-family: 'Poppins', sans-serif;
     color: white;
 }
 
-/* =========================
-REMOVE STREAMLIT STYLE
-========================= */
+/* MAIN BACKGROUND */
+.stApp {
+    background:
+    radial-gradient(circle at top left, #0b2c5f 0%, transparent 35%),
+    radial-gradient(circle at bottom right, #182b7a 0%, transparent 35%),
+    linear-gradient(135deg,#020617,#071026,#081b3a,#111c44);
+}
+
+/* REMOVE STREAMLIT HEADER */
+header {
+    visibility: hidden;
+}
 
 #MainMenu {
     visibility: hidden;
@@ -50,329 +43,207 @@ footer {
     visibility: hidden;
 }
 
-header {
-    visibility: hidden;
-}
-
-/* =========================
-NAVBAR
-========================= */
-
+/* NAVBAR */
 .navbar {
-
-    background:
-    rgba(10,15,40,0.95);
-
-    border: 1px solid rgba(255,255,255,0.06);
-
-    padding: 14px 30px;
-
-    border-radius: 18px;
-
-    margin-bottom: 25px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    box-shadow:
-    0 0 25px rgba(0,198,255,0.08);
+    background: rgba(4,10,35,0.88);
+    padding: 24px 40px;
+    border-radius: 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+    border:1px solid rgba(255,255,255,0.06);
+    box-shadow:0 0 40px rgba(0,198,255,0.08);
 }
 
 .logo {
-
-    font-size: 34px;
-
-    font-weight: 800;
-
-    color: white;
+    font-size:42px;
+    font-weight:800;
+    color:white;
 }
 
-.logo span {
-    color: #00cfff;
+.logo-blue {
+    color:#00d9ff;
 }
 
-.menu {
-
-    display: flex;
-
-    gap: 30px;
-
-    font-size: 16px;
+.nav-links {
+    display:flex;
+    gap:35px;
+    font-size:18px;
+    color:#cbd5e1;
 }
 
-.menu a {
-
-    color: #dbeafe;
-
-    text-decoration: none;
-
-    transition: 0.3s;
-}
-
-.menu a:hover {
-    color: #00cfff;
-}
-
-/* =========================
-HERO
-========================= */
-
+/* HERO */
 .hero {
-
-    background:
-    linear-gradient(
-        145deg,
-        rgba(10,20,60,0.95),
-        rgba(15,25,70,0.95)
-    );
-
-    border-radius: 30px;
-
-    padding: 50px;
-
-    border: 1px solid rgba(255,255,255,0.06);
-
-    box-shadow:
-    0 0 40px rgba(0,198,255,0.12);
-
-    margin-bottom: 30px;
+    background: linear-gradient(135deg,#08144a,#0a1f63);
+    padding: 70px;
+    border-radius: 35px;
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:0 0 60px rgba(0,198,255,0.12);
 }
 
+/* HERO TITLE */
 .hero-title {
-
-    font-size: 70px;
-
-    font-weight: 900;
-
-    line-height: 1.1;
-
-    color: white;
+    font-size:88px;
+    line-height:1;
+    font-weight:900;
+    margin-bottom:20px;
+    color:white;
 }
 
 .glow {
-    color: #00cfff;
+    color:#00d9ff;
 
     text-shadow:
-    0 0 10px rgba(0,207,255,0.7),
-    0 0 20px rgba(0,207,255,0.4);
+    0 0 10px #00d9ff,
+    0 0 20px #00d9ff,
+    0 0 40px #00d9ff,
+    0 0 80px #00d9ff;
 }
 
-.hero-desc {
-
-    color: #dbeafe;
-
-    font-size: 22px;
-
-    margin-top: 18px;
+.hero-subtitle {
+    font-size:24px;
+    color:#cbd5e1;
+    margin-top:25px;
 }
 
-/* =========================
-SEARCH BOX
-========================= */
-
-.stTextInput input {
-
-    background:
-    rgba(10,20,55,0.95) !important;
-
-    color: white !important;
-
-    border-radius: 18px !important;
-
-    border: 1px solid rgba(0,198,255,0.25) !important;
-
-    padding: 15px !important;
-
-    font-size: 16px !important;
+/* ESTABLISHED BOX */
+.established-box {
+    margin-top:40px;
+    width:fit-content;
+    padding:18px 24px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
 }
 
-/* =========================
-BOOK CARD
-========================= */
-
-.book-card {
-
-    background:
-    linear-gradient(
-        145deg,
-        rgba(10,20,60,0.95),
-        rgba(15,25,70,0.95)
-    );
-
-    border-radius: 24px;
-
-    padding: 22px;
-
-    margin-bottom: 22px;
-
-    border: 1px solid rgba(255,255,255,0.06);
-
-    box-shadow:
-    0 0 20px rgba(0,0,0,0.2);
-
-    transition: 0.3s;
+.established-title {
+    font-size:30px;
+    font-weight:800;
+    color:white;
 }
 
-.book-card:hover {
-
-    transform: translateY(-4px);
-
-    box-shadow:
-    0 0 30px rgba(0,198,255,0.18);
+.established-sub {
+    color:#94a3b8;
+    font-size:17px;
+    margin-top:8px;
 }
 
-/* =========================
-BOOK TITLE
-========================= */
-
-.book-title {
-
-    color: white;
-
-    font-size: 34px;
-
-    font-weight: 800;
-}
-
-/* =========================
-AUTHOR
-========================= */
-
-.author {
-
-    color: #dbeafe;
-
-    font-size: 18px;
-}
-
-/* =========================
-TAG
-========================= */
-
-.tag {
-
-    display: inline-block;
-
-    margin-top: 12px;
-
-    padding: 7px 16px;
-
-    border-radius: 999px;
-
-    background:
-    linear-gradient(
-        90deg,
-        rgba(111,66,255,0.25),
-        rgba(0,198,255,0.25)
-    );
-
-    color: #dbeafe;
-
-    font-size: 13px;
-}
-
-/* =========================
-BUTTON
-========================= */
-
-.stButton button {
-
-    background:
-    linear-gradient(
-        90deg,
-        #00c6ff,
-        #6f42ff
-    );
-
-    color: white;
-
-    border: none;
-
-    border-radius: 14px;
-
-    padding: 11px 24px;
-
-    font-weight: 700;
-
-    transition: 0.3s;
-
-    box-shadow:
-    0 0 18px rgba(0,198,255,0.2);
-}
-
-.stButton button:hover {
-
-    transform: translateY(-3px);
-
-    box-shadow:
-    0 0 25px rgba(0,198,255,0.35);
-}
-
-/* =========================
-METRICS
-========================= */
-
+/* METRIC */
 .metric-box {
+    background: rgba(8,20,70,0.88);
+    padding: 45px 20px;
+    border-radius: 28px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,0.05);
+    transition:0.3s;
+    box-shadow:0 0 30px rgba(0,198,255,0.08);
+}
 
-    background:
-    linear-gradient(
-        145deg,
-        rgba(15,25,60,0.95),
-        rgba(12,22,55,0.95)
-    );
-
-    border-radius: 24px;
-
-    padding: 30px;
-
-    text-align: center;
-
-    border: 1px solid rgba(255,255,255,0.06);
-
-    box-shadow:
-    0 0 25px rgba(0,198,255,0.08);
+.metric-box:hover {
+    transform:translateY(-6px);
+    box-shadow:0 0 35px rgba(0,198,255,0.18);
 }
 
 .metric-icon {
-
-    font-size: 42px;
-
-    margin-bottom: 12px;
+    font-size:55px;
 }
 
 .metric-title {
-
-    color: #dbeafe;
-
-    font-size: 24px;
-
-    font-weight: 700;
+    font-size:28px;
+    font-weight:700;
+    margin-top:20px;
 }
 
-.metric-value {
+.metric-number {
+    font-size:72px;
+    font-weight:900;
+    margin-top:20px;
+}
 
+/* SEARCH */
+.stTextInput input {
+    background: rgba(10,20,50,0.95);
     color: white;
-
-    font-size: 56px;
-
-    font-weight: 900;
-
-    margin-top: 10px;
+    border-radius: 18px;
+    border: 1px solid #2f4fff;
+    padding: 18px;
+    font-size:18px;
 }
 
-/* =========================
-IMAGE
-========================= */
+/* BOOK CARD */
+.book-card {
+    background: rgba(12,20,55,0.92);
+    padding: 28px;
+    border-radius: 24px;
+    margin-bottom: 24px;
+    border:1px solid rgba(255,255,255,0.06);
+    transition:0.3s;
+}
 
-img {
-    border-radius: 18px !important;
+.book-card:hover {
+    transform:translateY(-5px);
+    box-shadow:0 0 30px rgba(0,198,255,0.18);
+}
+
+/* TAG */
+.tag {
+    display:inline-block;
+    margin-top:14px;
+    padding:8px 18px;
+    border-radius:999px;
+    background:rgba(0,217,255,0.12);
+    color:#00d9ff;
+    font-size:14px;
+    font-weight:600;
+}
+
+/* BUTTON */
+.stButton button {
+    width:100%;
+    background: linear-gradient(90deg,#00c6ff,#6f42ff);
+    color:white;
+    border:none;
+    border-radius:16px;
+    padding:14px;
+    font-size:16px;
+    font-weight:700;
+    transition:0.3s;
+}
+
+.stButton button:hover {
+    transform:scale(1.03);
+    box-shadow:0 0 25px #00d9ff;
+}
+
+/* SECTION TITLE */
+.section-title {
+    font-size:40px;
+    font-weight:800;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+/* HISTORY */
+.history-box {
+    background:rgba(10,20,55,0.9);
+    padding:18px;
+    border-radius:18px;
+    margin-bottom:12px;
+    border:1px solid rgba(255,255,255,0.05);
 }
 
 </style>
 """, unsafe_allow_html=True)
+
+# ==========================================
+# SESSION
+# ==========================================
+if "cart" not in st.session_state:
+    st.session_state.cart = []
+
+if "history" not in st.session_state:
+    st.session_state.history = []
 
 # ==========================================
 # NAVBAR
@@ -381,101 +252,19 @@ st.markdown("""
 <div class="navbar">
 
 <div class="logo">
-📚 SmartLib <span>Archivio</span>
+📚 SmartLib <span class="logo-blue">Archivio</span>
 </div>
 
-<div class="menu">
-<a href="#">Home</a>
-<a href="#">Explore</a>
-<a href="#">My Books</a>
-<a href="#">History</a>
-<a href="#">About</a>
-</div>
-
-</div>
-""", unsafe_allow_html=True)
-
-# ==========================================
-# HERO SECTION
-# ==========================================
-st.markdown("""
-<div class="hero">
-
-<div class="hero-title">
-Find Your Favorite Book
-<span class="glow">Instantly</span>
-</div>
-
-<div class="hero-desc">
-Search thousands of books with a fast and efficient system.
+<div class="nav-links">
+<span>Home</span>
+<span>Explore</span>
+<span>My Books</span>
+<span>History</span>
+<span>About</span>
 </div>
 
 </div>
 """, unsafe_allow_html=True)
-
-# ==========================================
-# METRICS
-# ==========================================
-c1, c2, c3 = st.columns(3)
-
-with c1:
-    st.markdown(f"""
-    <div class="metric-box">
-
-    <div class="metric-icon">📚</div>
-
-    <div class="metric-title">
-    Books Borrowed
-    </div>
-
-    <div class="metric-value">
-    {len(st.session_state.cart)}
-    </div>
-
-    </div>
-    """, unsafe_allow_html=True)
-
-with c2:
-    st.markdown("""
-    <div class="metric-box">
-
-    <div class="metric-icon">🛡️</div>
-
-    <div class="metric-title">
-    Borrow Limit
-    </div>
-
-    <div class="metric-value">
-    3 Books
-    </div>
-
-    </div>
-    """, unsafe_allow_html=True)
-
-with c3:
-    st.markdown("""
-    <div class="metric-box">
-
-    <div class="metric-icon">🕒</div>
-
-    <div class="metric-title">
-    History
-    </div>
-
-    <div class="metric-value">
-    0
-    </div>
-
-    </div>
-    """, unsafe_allow_html=True)
-
-st.write("")
-st.write("")
-
-# ==========================================
-# SEARCH
-# ==========================================
-search = st.text_input("🔎 Search books")
 
 # ==========================================
 # BOOK DATA
@@ -498,38 +287,115 @@ books = [
         "author":"Smart Academy",
         "category":"Data Science",
         "image":"https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+    },
+    {
+        "title":"Cyber Security",
+        "author":"Secure Labs",
+        "category":"Cyber Security",
+        "image":"https://images.unsplash.com/photo-1510511459019-5dda7724fd87"
     }
 ]
 
 # ==========================================
-# BOOK LIST
+# HERO SECTION
+# ==========================================
+st.markdown("""
+<div class="hero">
+
+<div class="hero-title">
+Find Your Favorite Book
+<br>
+<span class="glow">Instantly</span>
+</div>
+
+<div class="hero-subtitle">
+Search thousands of books with a fast and efficient system.
+</div>
+
+<div class="established-box">
+
+<div class="established-title">
+📚 SmartLib <span class="logo-blue">Archivio</span>
+</div>
+
+<div class="established-sub">
+Established on 6 June 2022
+</div>
+
+</div>
+
+</div>
+""", unsafe_allow_html=True)
+
+st.write("")
+st.write("")
+
+# ==========================================
+# METRICS
+# ==========================================
+c1, c2, c3 = st.columns(3)
+
+with c1:
+    st.markdown(f"""
+    <div class="metric-box">
+        <div class="metric-icon">📚</div>
+        <div class="metric-title">Books Borrowed</div>
+        <div class="metric-number">{len(st.session_state.cart)}</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with c2:
+    st.markdown("""
+    <div class="metric-box">
+        <div class="metric-icon">🛡</div>
+        <div class="metric-title">Borrow Limit</div>
+        <div class="metric-number glow">3 Books</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with c3:
+    st.markdown(f"""
+    <div class="metric-box">
+        <div class="metric-icon">🕒</div>
+        <div class="metric-title">History</div>
+        <div class="metric-number">{len(st.session_state.history)}</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+st.write("")
+st.write("")
+
+# ==========================================
+# SEARCH
+# ==========================================
+search = st.text_input(
+    "🔎 Search your favorite books"
+)
+
+st.write("")
+
+# ==========================================
+# BOOKS
 # ==========================================
 for book in books:
 
     if search.lower() in book["title"].lower():
 
-        col1, col2 = st.columns([1,4])
+        col1, col2 = st.columns([1, 2])
 
         with col1:
-            st.image(
-                book["image"],
-                use_container_width=True
-            )
+            st.image(book["image"], use_container_width=True)
 
         with col2:
 
             st.markdown(f"""
             <div class="book-card">
 
-            <div class="book-title">
-            {book["title"]}
-            </div>
+            <h1>{book["title"]}</h1>
 
-            <br>
-
-            <div class="author">
+            <p style="font-size:18px;color:#cbd5e1;">
             Author: {book["author"]}
-            </div>
+            </p>
 
             <div class="tag">
             {book["category"]}
@@ -547,12 +413,92 @@ for book in books:
 
                     if book["title"] not in st.session_state.cart:
 
-                        st.session_state.cart.append(book["title"])
+                        st.session_state.cart.append(
+                            book["title"]
+                        )
 
-                        st.success("Book added successfully")
+                        st.session_state.history.append(
+                            f"📖 Borrowed: {book['title']}"
+                        )
+
+                        st.success(
+                            "Book added successfully"
+                        )
 
                     else:
-                        st.warning("Book already borrowed")
+                        st.warning(
+                            "Book already borrowed"
+                        )
 
                 else:
-                    st.error("Borrow limit reached")
+                    st.error(
+                        "Borrow limit reached"
+                    )
+
+# ==========================================
+# MY BOOKS
+# ==========================================
+st.write("")
+st.write("")
+
+st.markdown("""
+<div class="section-title">
+📖 My Books
+</div>
+""", unsafe_allow_html=True)
+
+if not st.session_state.cart:
+
+    st.info("No books borrowed.")
+
+else:
+
+    for item in st.session_state.cart:
+
+        col1, col2 = st.columns([5,1])
+
+        with col1:
+            st.success(f"✅ {item}")
+
+        with col2:
+
+            if st.button(
+                "Return",
+                key=f"return_{item}"
+            ):
+
+                st.session_state.cart.remove(item)
+
+                st.session_state.history.append(
+                    f"↩ Returned: {item}"
+                )
+
+                st.rerun()
+
+# ==========================================
+# HISTORY
+# ==========================================
+st.write("")
+st.write("")
+
+st.markdown("""
+<div class="section-title">
+🕒 History
+</div>
+""", unsafe_allow_html=True)
+
+if not st.session_state.history:
+
+    st.info("No borrowing history.")
+
+else:
+
+    for item in reversed(
+        st.session_state.history
+    ):
+
+        st.markdown(f"""
+        <div class="history-box">
+        {item}
+        </div>
+        """, unsafe_allow_html=True)
