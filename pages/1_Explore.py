@@ -1,4 +1,4 @@
-```python
+
 import streamlit as st
 
 # ==========================================
@@ -150,4 +150,4 @@ for book in filtered_books:
                     else:
 
                         st.warning("Book already borrowed.")
-```
+
