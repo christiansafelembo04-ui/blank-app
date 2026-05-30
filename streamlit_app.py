@@ -605,40 +605,7 @@ books = [
     # ==========================================
     # GAMES
     # ==========================================
-    {
-        "title":"Minecraft Survival Guide",
-        "author":"Mojang",
-        "category":"Gaming",
-        "image":"https://cdn.pixabay.com/photo/2016/11/29/09/32/game-1867271_1280.jpg"
-    },
-
-    {
-        "title":"Roblox Adventures",
-        "author":"Roblox Studio",
-        "category":"Gaming",
-        "image":"https://cdn.pixabay.com/photo/2017/01/31/13/14/game-2027039_1280.png"
-    },
-
-    {
-        "title":"PUBG Battleground Tactics",
-        "author":"PUBG Corporation",
-        "category":"Gaming",
-        "image":"https://cdn.pixabay.com/photo/2017/08/10/07/32/gaming-2616760_1280.jpg"
-    },
-
-    {
-        "title":"Free Fire Elite Squad",
-        "author":"Garena",
-        "category":"Gaming",
-        "image":"https://cdn.pixabay.com/photo/2016/11/29/03/53/game-1866921_1280.jpg"
-    },
-
-    {
-        "title":"Mobile Legends Ultimate Heroes",
-        "author":"Moonton",
-        "category":"Gaming",
-        "image":"https://cdn.pixabay.com/photo/2016/11/21/15/46/mobile-phone-1846277_1280.jpg"
-    }
+   
 
 ]
 
