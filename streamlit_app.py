@@ -385,7 +385,7 @@ books = [
         "title":"Messi: The Rise of a Legend",
         "author":"Football Media",
         "category":"Football",
-        "image":"messi.png"
+        "image":"https://upload.wikimedia.org/wikipedia/commons/e/e8/Lionel_Messi_2022.jpg"
     },
 
     {
