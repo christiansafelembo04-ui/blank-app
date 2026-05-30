@@ -258,7 +258,7 @@ st.markdown("""
 <div class="nav-links">
 <span>Home</span>
 <span>Explore</span>
-<span>My Books</span>
+<span>Borrow Cart</span>
 <span>History</span>
 <span>About</span>
 </div>
@@ -271,32 +271,111 @@ st.markdown("""
 # ==========================================
 books = [
 
+    # HARRY POTTER
     {
-        "title":"Python Dasar",
-        "author":"Archivio Team",
-        "category":"Programming",
-        "image":"https://images.unsplash.com/photo-1515879218367-8466d910aaa4"
+        "title":"Harry Potter and the Sorcerer’s Stone",
+        "author":"J.K. Rowling",
+        "category":"Fantasy",
+        "image":"https://images.unsplash.com/photo-1512820790803-83ca734da794"
     },
 
     {
-        "title":"AI Modern",
-        "author":"Tech Publisher",
-        "category":"Artificial Intelligence",
-        "image":"https://images.unsplash.com/photo-1677442136019-21780ecad995"
+        "title":"Harry Potter and the Chamber of Secrets",
+        "author":"J.K. Rowling",
+        "category":"Fantasy",
+        "image":"https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
     },
 
     {
-        "title":"Data Science 101",
-        "author":"Smart Academy",
-        "category":"Data Science",
-        "image":"https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+        "title":"Harry Potter and the Prisoner of Azkaban",
+        "author":"J.K. Rowling",
+        "category":"Fantasy",
+        "image":"https://images.unsplash.com/photo-1524578271613-d550eacf6090"
     },
 
     {
-        "title":"Cyber Security",
-        "author":"Secure Labs",
-        "category":"Cyber Security",
-        "image":"https://images.unsplash.com/photo-1510511459019-5dda7724fd87"
+        "title":"Harry Potter and the Goblet of Fire",
+        "author":"J.K. Rowling",
+        "category":"Fantasy",
+        "image":"https://images.unsplash.com/photo-1516979187457-637abb4f9353"
+    },
+
+    {
+        "title":"Harry Potter and the Order of the Phoenix",
+        "author":"J.K. Rowling",
+        "category":"Fantasy",
+        "image":"https://images.unsplash.com/photo-1544947950-fa07a98d237f"
+    },
+
+    # MARVEL & DC
+    {
+        "title":"Avengers: Endgame",
+        "author":"Marvel Studios",
+        "category":"Superhero",
+        "image":"https://images.unsplash.com/photo-1531259683007-016a7b628fc3"
+    },
+
+    {
+        "title":"Avengers: Infinity War",
+        "author":"Marvel Studios",
+        "category":"Superhero",
+        "image":"https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c"
+    },
+
+    {
+        "title":"The Amazing Spider-Man",
+        "author":"Marvel Comics",
+        "category":"Superhero",
+        "image":"https://images.unsplash.com/photo-1635805737707-575885ab0820"
+    },
+
+    {
+        "title":"Batman: The Dark Knight",
+        "author":"DC Comics",
+        "category":"Superhero",
+        "image":"https://images.unsplash.com/photo-1608889175119-6c7d1d5d4d4a"
+    },
+
+    {
+        "title":"Superman Returns",
+        "author":"DC Comics",
+        "category":"Superhero",
+        "image":"https://images.unsplash.com/photo-1626814026160-2237a95fc5a0"
+    },
+
+    {
+        "title":"Captain America: Civil War",
+        "author":"Marvel Studios",
+        "category":"Superhero",
+        "image":"https://images.unsplash.com/photo-1507842217343-583bb7270b66"
+    },
+
+    {
+        "title":"Iron Man",
+        "author":"Marvel Comics",
+        "category":"Superhero",
+        "image":"https://images.unsplash.com/photo-1514329926535-7f6db2f4b2f4"
+    },
+
+    {
+        "title":"Thor: Ragnarok",
+        "author":"Marvel Studios",
+        "category":"Superhero",
+        "image":"https://images.unsplash.com/photo-1495446815901-a7297e633e8d"
+    },
+
+    {
+        "title":"Doctor Strange",
+        "author":"Marvel Studios",
+        "category":"Superhero",
+        "image":"https://images.unsplash.com/photo-1512820790803-83ca734da794"
+    },
+
+    {
+        "title":"Black Panther",
+        "author":"Marvel Studios",
+        "category":"Superhero",
+        "image":"https://images.unsplash.com/photo-1521587760476-6c12a4b040da"
     }
 
 ]
@@ -385,13 +464,12 @@ st.write("")
 found = False
 
 # ==========================================
-# ONLY SEARCH WHEN USER TYPES
+# SEARCH BOOKS
 # ==========================================
 if search.strip() != "":
 
     for book in books:
 
-        # FLEXIBLE SEARCH
         if search.lower().strip() in book["title"].lower():
 
             found = True
@@ -422,36 +500,28 @@ if search.strip() != "":
                 </div>
                 """, unsafe_allow_html=True)
 
-                # ==========================================
                 # BORROW BUTTON
-                # ==========================================
                 if st.button(
                     f"Borrow {book['title']}",
                     key=book["title"]
                 ):
 
-                    # CHECK LIMIT
                     if len(st.session_state.cart) < 3:
 
-                        # CHECK DUPLICATE
                         if book["title"] not in st.session_state.cart:
 
-                            # ADD BOOK
                             st.session_state.cart.append(
                                 book["title"]
                             )
 
-                            # ADD HISTORY
                             st.session_state.history.append(
                                 f"📖 Borrowed: {book['title']}"
                             )
 
-                            # SUCCESS
                             st.success(
                                 "Book added successfully"
                             )
 
-                            # REFRESH
                             st.rerun()
 
                         else:
@@ -464,9 +534,7 @@ if search.strip() != "":
                             "Borrow limit reached"
                         )
 
-    # ==========================================
     # BOOK NOT FOUND
-    # ==========================================
     if not found:
 
         st.error(
@@ -474,14 +542,14 @@ if search.strip() != "":
         )
 
 # ==========================================
-# MY BOOKS
+# BORROW CART
 # ==========================================
 st.write("")
 st.write("")
 
 st.markdown("""
 <div class="section-title">
-📖 My Books
+🛒 Borrow Cart
 </div>
 """, unsafe_allow_html=True)
 
@@ -505,15 +573,12 @@ else:
                 key=f"return_{item}"
             ):
 
-                # REMOVE BOOK
                 st.session_state.cart.remove(item)
 
-                # ADD HISTORY
                 st.session_state.history.append(
                     f"↩ Returned: {item}"
                 )
 
-                # REFRESH
                 st.rerun()
 
 # ==========================================
