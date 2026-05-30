@@ -1,4 +1,3 @@
-
 import streamlit as st
 
 # ==========================================
@@ -46,12 +45,29 @@ html, body, [class*="css"] {
     color: white;
 }
 
-/* HIDE DEFAULT */
-footer {visibility: hidden;}
+/* HIDE FOOTER ONLY */
+footer {
+    visibility: hidden;
+}
 
 /* SIDEBAR */
 section[data-testid="stSidebar"] {
     background: rgba(15,23,42,0.95);
+}
+
+/* SIDEBAR TEXT */
+section[data-testid="stSidebar"] * {
+    color: white !important;
+}
+
+/* NAVIGATION */
+[data-testid="stSidebarNav"] {
+    display: block !important;
+}
+
+[data-testid="stSidebarNav"] * {
+    color: white !important;
+    font-size: 16px !important;
 }
 
 /* PAGE */
@@ -135,27 +151,30 @@ section[data-testid="stSidebar"] {
 
 left, right = st.columns([2,1])
 
-hero_html = """
-<div class="hero">
-
-    <div class="hero-title">
-        Find Your Favorite Book
-        <span>Instantly</span>
-    </div>
-
-    <div class="hero-sub">
-        SmartLib Archivio is a modern digital library platform
-        designed to help users discover, borrow, and manage
-        books efficiently.
-    </div>
-
-</div>
-"""
-
 with left:
-    st.markdown(hero_html, unsafe_allow_html=True)
+
+    st.markdown(
+        """
+        <div class="hero">
+
+            <h1 class="hero-title">
+                Find Your Favorite Book
+                <span>Instantly</span>
+            </h1>
+
+            <p class="hero-sub">
+                SmartLib Archivio is a modern digital library platform
+                designed to help users discover, borrow, and manage
+                books efficiently.
+            </p>
+
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
 with right:
+
     st.image(
         "https://cdn-icons-png.flaticon.com/512/2232/2232688.png",
         width=320
@@ -236,5 +255,5 @@ with p5:
 st.markdown("<br>", unsafe_allow_html=True)
 
 st.info(
-    "Use the sidebar to navigate between pages."
+    "Use the sidebar on the left to navigate between pages."
 )
