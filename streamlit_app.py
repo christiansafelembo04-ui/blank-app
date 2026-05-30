@@ -46,10 +46,8 @@ html, body, [class*="css"] {
     color: white;
 }
 
-/* HIDE ONLY FOOTER */
-footer {
-    visibility: hidden;
-}
+/* HIDE DEFAULT */
+footer {visibility: hidden;}
 
 /* SIDEBAR */
 section[data-testid="stSidebar"] {
