@@ -601,7 +601,35 @@ books = [
         "author":"Lucasfilm",
         "category":"Sci-Fi",
         "image":"https://images.unsplash.com/photo-1446776811953-b23d57bd21aa"
+    },
+      {
+        "title":"Python Dasar",
+        "author":"Archivio Team",
+        "category":"Programming",
+        "image":"https://images.unsplash.com/photo-1515879218367-8466d910aaa4"
+    },
+
+    {
+        "title":"AI Modern",
+        "author":"Tech Publisher",
+        "category":"Artificial Intelligence",
+        "image":"https://images.unsplash.com/photo-1677442136019-21780ecad995"
+    },
+
+    {
+        "title":"Data Science 101",
+        "author":"Smart Academy",
+        "category":"Data Science",
+        "image":"https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+    },
+
+    {
+        "title":"Cyber Security",
+        "author":"Secure Labs",
+        "category":"Cyber Security",
+        "image":"https://images.unsplash.com/photo-1510511459019-5dda7724fd87"
     }
+
 
 ]
     # ==========================================
