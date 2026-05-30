@@ -442,9 +442,10 @@ books = [
         "title":"UEFA Champions League Heroes",
         "author":"UEFA",
         "category":"Football",
-        "image":https://images.unsplash.com/photo-1606925797303-0f487ff3d36f"
+        "image":https:"https://images.unsplash.com/photo-1606925797303-0f487ff3d36f"
+},
 
-    },
+
 
     {
         "title":"The Greatest Goals Ever Scored",
