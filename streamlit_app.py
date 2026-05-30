@@ -30,7 +30,7 @@ html, body, [class*="css"] {
     linear-gradient(135deg,#020617,#071026,#081b3a,#111c44);
 }
 
-/* REMOVE STREAMLIT HEADER */
+/* HIDE STREAMLIT */
 header {
     visibility: hidden;
 }
@@ -107,7 +107,7 @@ footer {
     margin-top:25px;
 }
 
-/* ESTABLISHED BOX */
+/* ESTABLISHED */
 .established-box {
     margin-top:40px;
     width:fit-content;
@@ -129,7 +129,7 @@ footer {
     margin-top:8px;
 }
 
-/* METRIC */
+/* METRICS */
 .metric-box {
     background: rgba(8,20,70,0.88);
     padding: 45px 20px;
@@ -349,7 +349,7 @@ with c2:
     <div class="metric-box">
         <div class="metric-icon">🛡</div>
         <div class="metric-title">Borrow Limit</div>
-        <div class="metric-number glow">3 Books</div>
+        <div class="metric-number glow">3</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -375,7 +375,7 @@ search = st.text_input(
 st.write("")
 
 # ==========================================
-# BOOKS
+# BOOK DISPLAY
 # ==========================================
 for book in books:
 
@@ -384,7 +384,10 @@ for book in books:
         col1, col2 = st.columns([1, 2])
 
         with col1:
-            st.image(book["image"], use_container_width=True)
+            st.image(
+                book["image"],
+                use_container_width=True
+            )
 
         with col2:
 
@@ -404,6 +407,9 @@ for book in books:
             </div>
             """, unsafe_allow_html=True)
 
+            # ==========================================
+            # BORROW BUTTON
+            # ==========================================
             if st.button(
                 f"Borrow {book['title']}",
                 key=book["title"]
@@ -413,17 +419,23 @@ for book in books:
 
                     if book["title"] not in st.session_state.cart:
 
+                        # ADD TO CART
                         st.session_state.cart.append(
                             book["title"]
                         )
 
+                        # ADD HISTORY
                         st.session_state.history.append(
                             f"📖 Borrowed: {book['title']}"
                         )
 
+                        # SUCCESS
                         st.success(
                             "Book added successfully"
                         )
+
+                        # INSTANT REFRESH
+                        st.rerun()
 
                     else:
                         st.warning(
@@ -467,12 +479,15 @@ else:
                 key=f"return_{item}"
             ):
 
+                # REMOVE BOOK
                 st.session_state.cart.remove(item)
 
+                # ADD HISTORY
                 st.session_state.history.append(
                     f"↩ Returned: {item}"
                 )
 
+                # REFRESH
                 st.rerun()
 
 # ==========================================
