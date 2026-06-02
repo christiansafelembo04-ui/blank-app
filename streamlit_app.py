@@ -256,11 +256,7 @@ st.markdown("""
 </div>
 
 <div class="nav-links">
-<span>Home</span>
-<span>Explore</span>
-<span>Borrow Cart</span>
-<span>History</span>
-<span>About</span>
+<span>✨ Established Since 2 June 2026</span>
 </div>
 
 </div>
