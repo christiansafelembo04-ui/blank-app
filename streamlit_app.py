@@ -755,48 +755,47 @@ if search.strip() != "":
                 </div>
                 """, unsafe_allow_html=True)
 
-                # BORROW BUTTON
-             if st.button(
-    f"Borrow {book['title']}",
-    key=book["title"]
-):
+# BORROW BUTTON
+                if st.button(
+                    f"Borrow {book['title']}",
+                    key=book["title"]
+                ):
 
-    # ==========================================
-    # LIMIT LOGIC
-    # ==========================================
-    if len(st.session_state.cart) >= 3:
+                    # ==========================================
+                    # LIMIT LOGIC
+                    # ==========================================
+                    if len(st.session_state.cart) >= 3:
 
-        st.error(
-            "❌ Borrow limit reached"
-        )
+                        st.error(
+                            "❌ Borrow limit reached"
+                        )
 
-        break
+                        break
 
-    # ==========================================
-    # ADD BOOK
-    # ==========================================
-    if book["title"] not in st.session_state.cart:
+                    # ==========================================
+                    # ADD BOOK
+                    # ==========================================
+                    if book["title"] not in st.session_state.cart:
 
-        st.session_state.cart.append(
-            book["title"]
-        )
+                        st.session_state.cart.append(
+                            book["title"]
+                        )
 
-        st.session_state.history.append(
-            f"📖 Borrowed: {book['title']}"
-        )
+                        st.session_state.history.append(
+                            f"📖 Borrowed: {book['title']}"
+                        )
 
-        st.success(
-            "✅ Book added successfully"
-        )
+                        st.success(
+                            "✅ Book added successfully"
+                        )
 
-        st.rerun()
+                        st.rerun()
 
-    else:
+                    else:
 
-        st.warning(
-            "⚠ Book already borrowed"
-        )
-
+                        st.warning(
+                            "⚠ Book already borrowed"
+                        )
     # BOOK NOT FOUND
     if not found:
 
