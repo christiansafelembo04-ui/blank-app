@@ -756,38 +756,46 @@ if search.strip() != "":
                 """, unsafe_allow_html=True)
 
                 # BORROW BUTTON
-                if st.button(
-                    f"Borrow {book['title']}",
-                    key=book["title"]
-                ):
+             if st.button(
+    f"Borrow {book['title']}",
+    key=book["title"]
+):
 
-                    if len(st.session_state.cart) < 3:
+    # ==========================================
+    # LIMIT LOGIC
+    # ==========================================
+    if len(st.session_state.cart) >= 3:
 
-                        if book["title"] not in st.session_state.cart:
+        st.error(
+            "❌ Borrow limit reached"
+        )
 
-                            st.session_state.cart.append(
-                                book["title"]
-                            )
+        break
 
-                            st.session_state.history.append(
-                                f"📖 Borrowed: {book['title']}"
-                            )
+    # ==========================================
+    # ADD BOOK
+    # ==========================================
+    if book["title"] not in st.session_state.cart:
 
-                            st.success(
-                                "Book added successfully"
-                            )
+        st.session_state.cart.append(
+            book["title"]
+        )
 
-                            st.rerun()
+        st.session_state.history.append(
+            f"📖 Borrowed: {book['title']}"
+        )
 
-                        else:
-                            st.warning(
-                                "Book already borrowed"
-                            )
+        st.success(
+            "✅ Book added successfully"
+        )
 
-                    else:
-                        st.error(
-                            "Borrow limit reached"
-                        )
+        st.rerun()
+
+    else:
+
+        st.warning(
+            "⚠ Book already borrowed"
+        )
 
     # BOOK NOT FOUND
     if not found:
